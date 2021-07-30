@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import logger from "redux-logger";
-import { questionReducer } from "../reducers/questions_reducer";
+import { questionReducer } from "../reducers/question_reducer";
 
 export const configureAppStore = (preloadedState) => {
   const store = configureStore({

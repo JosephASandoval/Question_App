@@ -1,14 +1,15 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { submitQuestion } from "../actions/question_actions";
 
-const QuestionForm = () => {
+const QuestionForm = ({ submit }) => {
   const [name, setName] = useState("");
   const [content, setContent] = useState("");
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault(); // when you submit a button in a form, html expects that you'll do some work and then refresh the page automatically, however, with react you have a single page app without refreshes.
-    
-    console.log("submitted")
-  }
+    submit({ name, content });
+  };
 
   return (
     <div>
@@ -30,5 +31,8 @@ const QuestionForm = () => {
     </div>
   );
 };
+const mdp = (dispatch) => ({
+  submit: (question) => dispatch(submitQuestion(question)),
+});
 
-export default QuestionForm;
+export default connect(null, mdp)(QuestionForm);

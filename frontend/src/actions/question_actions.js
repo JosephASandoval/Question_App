@@ -30,3 +30,5 @@ export const submitQuestion = (question) => async (dispatch) => {
 
 
 // async await is the more modern way to do it rather than promise chaining
+
+// these are thunk action creators that wait until the data is received before dispatching to store
