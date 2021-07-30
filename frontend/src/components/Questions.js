@@ -5,7 +5,7 @@ const questions = [{ content: "1" }, { content: "2" }, { content: "3" }];
 
 class Questions extends React.Component {
   componentDidMount() {
-    // tech questions
+    // fetch questions
   }
 
   generateQuestionsList = () => {
